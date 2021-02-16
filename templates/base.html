@@ -1,0 +1,39 @@
+<DOCTYPE html>
+<head>
+	<title>{% block title %} {% endblock %}</title>
+	<!-- Bootstrap CSS -->
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<style>
+		h1 {text-align: center; color: navy}
+		h2 {text-align: left; color: navy}
+		a {color: navy;}
+		a:hover {color: blue;}
+		a.btn {background-color: blue; color: white; border-color: blue;}
+		a.btn:hover {background-color: white; color: blue; border-color: blue;}
+		a.btn:focus {background-color: white; border-color: blue; box-shadow: 0 0 0 0.5px blue;}
+		a.btn:active {background-color: blue; color: white; border-color: blue; box-shadow: 0 0 0 0.5px navy;}
+		body {font-family: Georgia;}
+		div {margin: 80px;}
+		div.qu {float:left; margin: 5px;}
+		div.anketa {margin: 0px;}
+		div.stats {width: 500px; margin: 0px; float: left;}
+	</style>
+</head>
+<body>
+<!-- https://getbootstrap.com/docs/4.5/components/navbar/ -->
+	<ul class="nav nav-tabs">
+		<li class="nav-item">
+			<a class="nav-link" href="/participants">Участникам</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/org">Организаторам: ЭТО НЕ САЙТ И НЕ БОЛВАНКА!</a>
+		</li>
+	</ul>
+	<div>
+		{% block one_content %}{% endblock %}
+	</div>
+	<div>
+		{% block two_content %}{% endblock %}
+	</div>
+</body>

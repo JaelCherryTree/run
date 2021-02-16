@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} Страница для участников {% endblock %}
+
+{% block one_content %}<h1>Выберите</h1>
+<form action = '/results'>
+
+<br>Я не хочу читать направленность:
+<br>
+		<input type="checkbox" name="h" value="het">Гет<br>
+		<input type="checkbox" name="s" value="slash">Слэш<br>
+		<input type="checkbox" name="f" value="fem">Фемслэш<br>
+		<input type="checkbox" name="g" value="gen">Джен<br>
+<br><input type="submit"></a>
+</form>
+{% endblock %}

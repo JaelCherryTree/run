@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} Страница для организаторов {% endblock %}
+
+{% block one_content %}<h1>Тут орги-2</h1>
+<h2>Выбыли номера:</h2>
+{{were}}
+<h2>Ввод данных</h2>
+<form action = '/org_two'>
+<br>Название: <input type="text" name="title" size = "20">
+<br>Номер: <input type="text" name="num" size = "20">
+<br>Направленность: <select name="direction">
+			<option value="het">Гет</option>
+			<option value="slash">Слэш</option>
+			<option value="fem">Фемслэш</option>
+			<option value="gen">Джен</option>
+			<option value="fem_slash">Фем/Слэш</option>
+		</select>
+<br><input type="submit"></a>
+</form>
+{% endblock %}
+{% block two_content %}
+<form action = '/results'>
+<h2>Выбор</h2>
+<br>Были №№ <input type="text" name="numbers" size = "15">
+<br>Направленность: <select name="direction_two">
+			<option value="het">Гет</option>
+			<option value="slash">Слэш</option>
+			<option value="fem">Фемслэш</option>
+			<option value="gen">Джен</option>
+			<option value="fem_slash">Фем/Слэш</option>
+			<option value="any">Любая</option>
+		</select>
+<br><input type="submit"></a>
+</form>
+{% endblock %}
