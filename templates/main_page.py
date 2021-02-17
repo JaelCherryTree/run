@@ -1,5 +1,4 @@
 import models
-#import time
 import random
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -41,13 +40,13 @@ def org_two():
     title = request.args.get('title')
     num = request.args.get('num')
     direction = request.args.get('direction')
-    print(title, direction)
-    #passw = password
-    print(passw)
+    #print(title, direction)
+    #print(passw)
+    #смотрим, какие тексты уже выбыли:
     x_were = db.session.query(models.Were.text_id).all()
-    if passw == '666':
+    if passw == '666': #если пароль верный
         return render_template('org_two.html', were = x_were)
-    elif passw == None:
+    elif passw == None: #добавляем текст в бд
         text = models.Texts(
         text_id = num,
         direction=direction,
@@ -56,7 +55,7 @@ def org_two():
         db.session.add(text)
         db.session.commit()
         return render_template('org_two.html', were = x_were)
-    else:
+    else: #если пароль неверный
         return render_template('participants.html')
 
 @app.route('/org_three', methods=['get'])
@@ -82,7 +81,7 @@ def res():
         direc = request.args.get('direction_two')
     elif request.args.get('direction_three') != None:
         direc = request.args.get('direction_three')
-    numbers = request.args.get('numbers')
+    numbers = request.args.get('numbers') #прочитанные номера
     print(direc)
     #s = request.args.get('student')
     dont = (het, slash, fem, gen)
